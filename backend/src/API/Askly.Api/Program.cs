@@ -28,10 +28,22 @@ builder.Services.AddResponseCompression(options =>
     options.EnableForHttps = true;
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 
 WebApplication app = builder.Build();
 
 app.UseExceptionHandler();
+
+app.UseCors();
 
 app.UseResponseCompression();
 
