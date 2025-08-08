@@ -56,15 +56,28 @@
                 </div>
             </div>
             
-            <!-- CTA Button -->
-            <button 
-                onclick="window.location.href='chat.html'" 
-                class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold text-xl rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-            >
-                <i class="fas fa-comments mr-3"></i>
-                Start Chatting
-                <i class="fas fa-arrow-right ml-3"></i>
-            </button>
+            <!-- CTA Buttons -->
+            <div class="space-y-4">
+                <button 
+                    onclick="window.location.href='chat.html'" 
+                    class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold text-xl rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                >
+                    <i class="fas fa-comments mr-3"></i>
+                    Start Chatting
+                    <i class="fas fa-arrow-right ml-3"></i>
+                </button>
+                
+                <!-- Admin Link (conditional) -->
+                <div id="adminSection" class="hidden">
+                    <button 
+                        onclick="window.location.href='admin.html'" 
+                        class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-medium text-lg rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ml-4"
+                    >
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        Admin Panel
+                    </button>
+                </div>
+            </div>
         </div>
         
         <!-- Footer -->
@@ -72,5 +85,15 @@
             <p>&copy; 2025 Askly. Powered by AI.</p>
         </div>
     </div>
+
+    <script>
+        // Check for API key and show admin section if present
+        document.addEventListener('DOMContentLoaded', function() {
+            const apiKey = localStorage.getItem('askly_api_key');
+            if (apiKey) {
+                document.getElementById('adminSection').classList.remove('hidden');
+            }
+        });
+    </script>
 </body>
 </html>

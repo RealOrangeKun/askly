@@ -13,6 +13,15 @@ const createModeBtn = document.getElementById('createModeBtn');
 let currentMode = 'search'; // 'search' or 'create'
 let isLoading = false;
 
+// Initialize page
+document.addEventListener('DOMContentLoaded', function() {
+    // Check for API key and show admin link if present
+    const apiKey = localStorage.getItem('askly_api_key');
+    if (apiKey) {
+        document.getElementById('adminLinkHeader').classList.remove('hidden');
+    }
+});
+
 // Utility Functions
 function addPlaceholderMessage() {
     const messageDiv = document.createElement('div');

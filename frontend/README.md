@@ -8,6 +8,7 @@ A modern, responsive chat-based frontend for the Askly Q&A platform built with v
 - Beautiful app icon and branding
 - Feature showcase with animated cards
 - Call-to-action to start chatting
+- Conditional admin panel access (when API key is set)
 - Modern gradient design
 
 ### 💬 **Chat Interface**
@@ -16,6 +17,7 @@ A modern, responsive chat-based frontend for the Askly Q&A platform built with v
 - Two modes: Search and Create
 - Auto-scrolling messages
 - Responsive design for all devices
+- Admin panel link in header (when API key is set)
 
 ### � **Search Mode**
 - Find similar answered questions using vector similarity
@@ -26,6 +28,14 @@ A modern, responsive chat-based frontend for the Askly Q&A platform built with v
 - Submit new questions to the platform
 - Automatic embedding generation on the backend
 - Success feedback in chat format
+
+### 🛡️ **Admin Panel**
+- Question management interface
+- Answer pending questions
+- Edit existing answers
+- Pagination and filtering
+- Statistics dashboard
+- API key authentication
 
 ## Getting Started
 
@@ -38,13 +48,36 @@ Simply open `index.html` in your web browser to see the landing page, then click
 - **Send Messages**: Type your question and press Enter or click the send button
 - **View Results**: Similar questions and answers appear as chat messages
 
+### 3. Admin Access Setup
+To access the admin panel:
+
+1. **Set API Key**: You need to manually set the API key in localStorage:
+   ```javascript
+   // Open browser console (F12) and run:
+   localStorage.setItem('askly_api_key', 'your-admin-api-key-here');
+   ```
+
+2. **Access Admin Panel**: Once the API key is set:
+   - The "Admin Panel" button will appear on the landing page
+   - An "Admin" link will appear in the chat header
+   - Click either to access the admin interface
+
+3. **Admin Features**:
+   - View all questions with pagination
+   - Filter by answered/unanswered status
+   - Answer pending questions
+   - Edit existing answers
+   - Real-time statistics
+
 ## File Structure
 
 ```
 frontend/
 ├── index.html          # Landing page with app showcase
-├── chat.html          # Chat interface
+├── chat.html          # Chat interface  
 ├── chat.js            # Chat functionality and API integration
+├── admin.html         # Admin panel interface
+├── admin.js           # Admin functionality and API integration
 ├── app.js             # Legacy file (can be removed)
 ├── styles.css         # Custom CSS styles
 └── README.md          # This documentation
