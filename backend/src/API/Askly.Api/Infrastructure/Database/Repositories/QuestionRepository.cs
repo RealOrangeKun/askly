@@ -20,9 +20,21 @@ public class QuestionRepository(AsklyDbContext dbContext) : IQuestionRepository
             .ExecuteDeleteAsync(cancellationToken);
     }
 
+    public async Task<Question?> GetQuestionById(Guid Id, CancellationToken cancellationToken = default)
+    {
+        return await dbContext.Questions
+            .FirstOrDefaultAsync(q => q.Id == Id, cancellationToken);
+    }
+
     public async Task UpdateAsync(Question entity, CancellationToken cancellationToken = default)
     {
         dbContext.Questions.Update(entity);
         await dbContext.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task<bool> ExistsWithTextAsync(string questionText, CancellationToken cancellationToken = default)
+    {
+        return await dbContext.Questions
+            .AnyAsync(q => q.QuestionText.ToLower() == questionText.ToLower(), cancellationToken);
     }
 }

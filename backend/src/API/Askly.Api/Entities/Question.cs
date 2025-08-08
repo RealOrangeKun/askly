@@ -8,13 +8,15 @@ public sealed class Question : Entity
 {
     private Question() { }
 
+    public string QuestionText { get; private set; }
+
     public Vector QuestionEmbedding { get; private set; }
 
     public QuestionStatus Status { get; private set; }
 
     public string AnswerText { get; private set; }
 
-    public static Question Create(Vector questionEmbedding, QuestionStatus status, string answerText)
+    public static Question Create(Vector questionEmbedding, QuestionStatus status, string questionText)
     {
         return new Question
         {
@@ -23,14 +25,14 @@ public sealed class Question : Entity
             UpdatedAt = DateTime.UtcNow,
             QuestionEmbedding = questionEmbedding,
             Status = status,
-            AnswerText = answerText
+            AnswerText = string.Empty,
+            QuestionText = questionText
         };
     }
-
-    public void Update(QuestionStatus status, string answerText)
+    public void Answer(string answerText)
     {
-        Status = status;
         AnswerText = answerText;
+        Status = QuestionStatus.Answered;
         UpdatedAt = DateTime.UtcNow;
     }
 }

@@ -10,9 +10,18 @@ public class QuestionConfiguration : IEntityTypeConfiguration<Question>
     {
         builder.HasKey(q => q.Id);
 
+        builder.Property(q => q.QuestionText)
+            .HasMaxLength(1000)
+            .IsRequired();
+
         builder.Property(q => q.QuestionEmbedding)
             .HasColumnType("vector(384)")
             .IsRequired();
+
+        builder.HasIndex(q => q.QuestionEmbedding)
+            .HasMethod("ivfflat")
+            .HasOperators("vector_cosine_ops")
+            .HasStorageParameter("lists", 1);
 
         builder.Property(q => q.Status)
             .HasConversion<string>()
