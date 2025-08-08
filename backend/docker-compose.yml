@@ -11,8 +11,10 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:8080
       - ConnectionStrings__Database=Host=postgres;Port=5432;Database=askly;Username=postgres;Password=postgres
+      - ConnectionStrings__Redis=redis:6379
     depends_on:
       - postgres
+      - redis
     networks:
       - askly-network
 
@@ -25,12 +27,23 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes:
-      - ./postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - askly-network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
     networks:
       - askly-network
 
 volumes:
   postgres_data:
+  redis_data:
 
 networks:
   askly-network:
