@@ -1,0 +1,107 @@
+/* Custom CSS for Askly Frontend */
+
+.gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.loading {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Chat Interface Styles */
+.chat-container {
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e0 #f7fafc;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #f7fafc;
+    border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+
+.message-user {
+    margin-left: auto;
+    margin-right: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.message-bot {
+    margin-right: auto;
+    margin-left: 0;
+    background: white;
+    border: 1px solid #e2e8f0;
+}
+
+.chat-input-container {
+    border-top: 1px solid #e2e8f0;
+    background: white;
+}
+
+/* Mode button styles */
+.mode-btn {
+    transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+    background: #f3f4f6 !important;
+    color: #6b46c1 !important;
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%) !important;
+}

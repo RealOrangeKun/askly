@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askly - Smart Q&A Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <!-- Hero Section -->
+        <div class="mb-12">
+            <!-- App Icon -->
+            <div class="mb-8">
+                <div class="inline-flex items-center justify-center w-32 h-32 bg-gradient-to-br from-purple-600 to-blue-600 rounded-3xl shadow-2xl mb-6 transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-comments text-5xl text-white"></i>
+                </div>
+            </div>
+            
+            <!-- App Title -->
+            <h1 class="text-6xl font-bold text-gray-900 mb-6 gradient-text">
+                Askly
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-2xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Your intelligent Q&A companion. Ask questions, get smart answers, and discover knowledge through conversation.
+            </p>
+            
+            <!-- Features -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl p-6 shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-search text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Smart Search</h3>
+                    <p class="text-gray-600">Find similar questions and answers using AI-powered vector search</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-plus-circle text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Ask Anything</h3>
+                    <p class="text-gray-600">Submit your questions and contribute to the knowledge base</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-brain text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">AI-Powered</h3>
+                    <p class="text-gray-600">Leverages advanced AI to match and understand your questions</p>
+                </div>
+            </div>
+            
+            <!-- CTA Button -->
+            <button 
+                onclick="window.location.href='chat.html'" 
+                class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold text-xl rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            >
+                <i class="fas fa-comments mr-3"></i>
+                Start Chatting
+                <i class="fas fa-arrow-right ml-3"></i>
+            </button>
+        </div>
+        
+        <!-- Footer -->
+        <div class="text-gray-500 text-sm">
+            <p>&copy; 2025 Askly. Powered by AI.</p>
+        </div>
+    </div>
+</body>
+</html>
