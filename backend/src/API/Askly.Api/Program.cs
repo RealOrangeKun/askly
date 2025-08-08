@@ -23,7 +23,19 @@ builder.Services
     .AddInfrastructure(builder.Configuration)
     .AddApplication();
 
+builder.Services.AddResponseCompression(options =>
+{
+    options.EnableForHttps = true;
+});
+
+
 WebApplication app = builder.Build();
+
+app.UseExceptionHandler();
+
+app.UseResponseCompression();
+
+app.UseOutputCache();
 
 if (app.Environment.IsDevelopment())
 {
@@ -39,4 +51,4 @@ app.MapHealthChecks("/health", new HealthCheckOptions
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 });
 
-app.Run();
+await app.RunAsync();
