@@ -12,7 +12,7 @@ public class AnswerQuestionCommandEndpoint : ICarterModule
     public record Request(string AnswerText);
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPatch("/api/questions/{id}", async (Guid id, Request request, ISender sender) =>
+        app.MapPatch("/api/admin/questions/{id}", async (Guid id, Request request, ISender sender) =>
         {
             Result result = await sender.Send(new AnswerQuestionCommand(id, request.AnswerText));
 
@@ -36,6 +36,6 @@ public class AnswerQuestionCommandEndpoint : ICarterModule
         .Produces<ApiResponse>(StatusCodes.Status200OK)
         .Produces<ApiResponse>(StatusCodes.Status404NotFound)
         .Produces(StatusCodes.Status401Unauthorized)
-        .WithTags(Tags.Questions);
+        .WithTags(Tags.Questions, Tags.Admin);
     }
 }

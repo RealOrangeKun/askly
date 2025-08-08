@@ -59,7 +59,7 @@ public sealed class AskQuestionQueryHandler(
 
     private async Task<IEnumerable<QuestionResponse>> FetchSimilarQuestions(AskQuestionQuery request, CancellationToken cancellationToken)
     {
-        using DbConnection connection = await dbConnectionFactory.OpenConnectionAsync(cancellationToken);
+        await using DbConnection connection = await dbConnectionFactory.OpenConnectionAsync(cancellationToken);
 
         Vector questionEmbedding = await embeddingService.GenerateEmbeddingAsync(request.QuestionText, cancellationToken);
 
