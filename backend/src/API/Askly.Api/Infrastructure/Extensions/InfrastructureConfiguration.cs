@@ -8,7 +8,6 @@ using Dapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Npgsql;
-using Pgvector;
 
 namespace Askly.Api.Infrastructure.Extensions;
 
@@ -20,10 +19,20 @@ public static class InfrastructureConfiguration
 
         services.AddDbContext<AsklyDbContext>(options =>
             options.UseNpgsql(databaseConnectionString, o => o.UseVector())
-                   .UseSnakeCaseNamingConvention());
+                   .UseSnakeCaseNamingConvention()
+                   .EnableSensitiveDataLogging(false)
+                   .EnableServiceProviderCaching()
+                   .EnableDetailedErrors(false));
 
-        NpgsqlDataSource npgsqlDataSource = new NpgsqlDataSourceBuilder(databaseConnectionString).Build();
-        services.TryAddSingleton(npgsqlDataSource);
+        services.AddNpgsqlDataSource(databaseConnectionString, builder =>
+        {
+            builder.UseVector();
+            builder.EnableParameterLogging(false);
+        });
+
+        services.AddCachingInternal(configuration);
+
+
 
         services.TryAddScoped<IDbConnectionFactory, DbConnectionFactory>();
 
