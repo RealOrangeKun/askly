@@ -1,8 +1,14 @@
 using Askly.Api.Infrastructure.Database;
+using Askly.Api.Infrastructure.Database.Repositories;
+using Askly.Api.Infrastructure.Database.TypeHandlers;
+using Askly.Api.Infrastructure.Services;
 using Askly.Api.Shared.Database;
+using Askly.Api.Shared.Services;
+using Dapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Npgsql;
+using Pgvector;
 
 namespace Askly.Api.Infrastructure.Extensions;
 
@@ -21,6 +27,11 @@ public static class InfrastructureConfiguration
 
         services.TryAddScoped<IDbConnectionFactory, DbConnectionFactory>();
 
+        services.TryAddScoped<IQuestionRepository, QuestionRepository>();
+
+        services.TryAddScoped<IEmbeddingService, EmbeddingService>();
+
+        SqlMapper.AddTypeHandler(new VectorTypeHandler());
 
         services.AddHealthChecks()
             .AddNpgSql(databaseConnectionString, name: "database", tags: ["ready"]);
