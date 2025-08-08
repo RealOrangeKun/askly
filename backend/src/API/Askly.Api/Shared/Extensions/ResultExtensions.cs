@@ -1,6 +1,5 @@
 using FluentResults;
 using Askly.Api.Shared.Contracts;
-using FluentValidation.Results;
 
 namespace Askly.Api.Shared.Extensions;
 

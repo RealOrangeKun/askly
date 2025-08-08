@@ -1,4 +1,3 @@
-using System;
 using FluentValidation;
 
 namespace Askly.Api.Features.Questions.AskQuestion;

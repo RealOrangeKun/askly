@@ -1,4 +1,3 @@
-using Askly.Api.Shared.Contracts;
 using Microsoft.Extensions.Primitives;
 
 namespace Askly.Api.Shared.Filters;

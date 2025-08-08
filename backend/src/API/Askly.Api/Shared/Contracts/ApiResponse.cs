@@ -7,7 +7,6 @@ public sealed class ApiResponse<T>
     public T? Data { get; init; }
     public string? Message { get; init; }
     public IEnumerable<string>? Errors { get; init; } = [];
-    public DateTime Timestamp { get; init; } = DateTime.UtcNow;
 
     private ApiResponse() { }
 
@@ -50,7 +49,6 @@ public sealed class ApiResponse
     public bool IsSuccess { get; init; }
     public string? Message { get; init; }
     public IEnumerable<string>? Errors { get; init; } = [];
-    public DateTime Timestamp { get; init; } = DateTime.UtcNow;
 
     private ApiResponse() { }
 

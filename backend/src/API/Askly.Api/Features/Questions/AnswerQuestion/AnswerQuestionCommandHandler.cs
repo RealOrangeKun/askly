@@ -1,4 +1,3 @@
-using System;
 using Askly.Api.Entities;
 using Askly.Api.Shared.Abstractions;
 using Askly.Api.Shared.Database;
