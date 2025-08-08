@@ -3,7 +3,7 @@ using FluentResults;
 using MediatR;
 using Askly.Api.Shared.Contracts;
 using Askly.Api.Shared.Extensions;
-using Askly.Api.Shared.Filters;
+using Askly.Api.Shared.Caching;
 
 namespace Askly.Api.Features.Questions.AskQuestion;
 
@@ -25,6 +25,7 @@ public sealed class AskQuestionEndpoint : ICarterModule
                 ? Results.Ok(response)
                 : Results.BadRequest(response);
         })
+        .CacheOutput(CachePolicy.PolicyNames.QuestionSearch)
         .WithName("AskQuestion")
         .WithSummary("Find similar questions")
         .WithDescription("Find the 5 most similar answered questions using vector similarity search")
