@@ -6,45 +6,36 @@ internal static class SwaggerExtension
 {
     internal static IServiceCollection AddSwaggerDocumentation(this IServiceCollection services)
     {
-        services.AddSwaggerGen(options =>
+        services.AddOpenApi(options =>
         {
-            options.SwaggerDoc("v1", new OpenApiInfo
+            options.AddDocumentTransformer((document, context, cancellationToken) =>
             {
-                Title = "Askly API",
-                Version = "v1",
-                Description = "Askly API for managing and answering questions in the Askly question-answering system.",
-            });
-
-            options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-            {
-                Description = "JWT Authorization header using the Bearer scheme. Example: 'Bearer {token}'",
-                Name = "Authorization",
-                In = ParameterLocation.Header,
-                Type = SecuritySchemeType.Http,
-                Scheme = "bearer",
-                BearerFormat = "JWT"
-            });
-
-            options.AddSecurityRequirement(new OpenApiSecurityRequirement
-            {
+                document.Info = new OpenApiInfo
                 {
-                    new OpenApiSecurityScheme
+                    Title = "Askly API",
+                    Version = "v1",
+                    Description = "Askly API for managing and answering questions in the Askly question-answering system.",
+                };
+
+                document.Components ??= new OpenApiComponents();
+                document.Components.SecuritySchemes = new Dictionary<string, OpenApiSecurityScheme>
+                {
+                    ["ApiKey"] = new OpenApiSecurityScheme
                     {
-                        Reference = new OpenApiReference
-                        {
-                            Type = ReferenceType.SecurityScheme,
-                            Id = "Bearer"
-                        },
-                        Scheme = "bearer",
-                        Name = "Bearer",
-                        In = ParameterLocation.Header
-                    },
-                    new List<string>()
-                }
+                        Description = "API Key needed to access the endpoints. Example: 'x-api-key: {key}'",
+                        Name = "x-api-key",
+                        In = ParameterLocation.Header,
+                        Type = SecuritySchemeType.ApiKey
+                    }
+                };
+
+                return Task.CompletedTask;
             });
         });
+
         return services;
     }
+
     internal static IApplicationBuilder UseSwaggerUIWithOpenApi(this IApplicationBuilder app)
     {
         app.UseSwaggerUI(options =>

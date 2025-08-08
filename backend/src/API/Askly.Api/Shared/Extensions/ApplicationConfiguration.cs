@@ -1,3 +1,4 @@
+using Askly.Api.Shared.Filters;
 using Carter;
 using FluentValidation;
 
@@ -10,12 +11,14 @@ public static class ApplicationConfiguration
         services.AddMediatR(cfg =>
             {
                 cfg.RegisterServicesFromAssembly(AssemblyReference.Assembly);
-
             });
 
         services.AddValidatorsFromAssembly(AssemblyReference.Assembly, includeInternalTypes: true);
 
         services.AddCarter();
+
+        services.AddScoped<ApiKeyAuthFilter>();
+
 
         return services;
     }
