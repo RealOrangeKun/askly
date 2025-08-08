@@ -7,10 +7,14 @@ public sealed class CreateQuestionCommandValidator : AbstractValidator<CreateQue
     public CreateQuestionCommandValidator()
     {
         RuleFor(x => x.QuestionText)
-            .NotEmpty().WithMessage("Question text is required")
-            .MaximumLength(1000).WithMessage("Question text cannot exceed 1000 characters")
-            .MinimumLength(10).WithMessage("Question text must be at least 10 characters")
-            .Must(IsValidQuestion).WithMessage("This doesn't look like a valid question. Please start with a question word, end with '?', or ask something specific.");
+            .NotEmpty()
+            .WithMessage("Question text is required")
+            .MaximumLength(1000)
+            .WithMessage("Question text cannot exceed 1000 characters")
+            .MinimumLength(10)
+            .WithMessage("Question text must be at least 10 characters")
+            .Must(IsValidQuestion)
+            .WithMessage("This doesn't look like a valid question. Please start with a question word, end with '?', or ask something specific.");
     }
 
     private static bool IsValidQuestion(string? text)
