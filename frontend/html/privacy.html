@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-500">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Askly</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configure Tailwind for dark mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    transitionProperty: {
+                        'colors': 'color, background-color, border-color, text-decoration-color, fill, stroke',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen preload">
+    <!-- Header -->
+    <header class="gradient-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <button onclick="window.location.href='index.html'" class="text-white hover:text-gray-200 mr-4 transition-colors">
+                        <i class="fas fa-arrow-left text-xl"></i>
+                    </button>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-shield-alt text-white"></i>
+                        </div>
+                        <h1 class="text-2xl font-bold text-white">Privacy Policy</h1>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <!-- Dark Mode Toggle -->
+                    <button 
+                        id="darkModeToggle" 
+                        class="p-2 rounded-lg bg-white bg-opacity-20 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105"
+                        onclick="toggleDarkMode()"
+                    >
+                        <i id="darkModeIcon" class="fas fa-moon text-white transition-colors duration-300"></i>
+                    </button>
+                    <!-- Admin Link (conditional) -->
+                    <div id="adminLinkHeader" class="hidden">
+                        <button 
+                            onclick="window.location.href='admin.html'" 
+                            class="bg-white bg-opacity-20 text-white hover:bg-opacity-30 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                        >
+                            <i class="fas fa-shield-alt mr-1"></i>
+                            Admin
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl shadow-xl mb-6">
+                <i class="fas fa-shield-alt text-3xl text-white"></i>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 gradient-text">
+                Privacy Policy
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Your privacy is important to us. This policy explains how we collect, use, and protect your personal information when you use Askly.
+            </p>
+            <div class="mt-6 text-sm text-gray-500 dark:text-gray-400">
+                <p><strong>Last Updated:</strong> January 1, 2025</p>
+                <p><strong>Effective Date:</strong> January 1, 2025</p>
+            </div>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                <i class="fas fa-list text-blue-500 mr-3"></i>
+                Table of Contents
+            </h2>
+            <div class="grid md:grid-cols-2 gap-2">
+                <a href="#information-collection" class="text-blue-600 dark:text-blue-400 hover:underline">1. Information We Collect</a>
+                <a href="#information-use" class="text-blue-600 dark:text-blue-400 hover:underline">2. How We Use Your Information</a>
+                <a href="#information-sharing" class="text-blue-600 dark:text-blue-400 hover:underline">3. Information Sharing</a>
+                <a href="#data-security" class="text-blue-600 dark:text-blue-400 hover:underline">4. Data Security</a>
+                <a href="#cookies" class="text-blue-600 dark:text-blue-400 hover:underline">5. Cookies and Tracking</a>
+                <a href="#user-rights" class="text-blue-600 dark:text-blue-400 hover:underline">6. Your Rights</a>
+                <a href="#data-retention" class="text-blue-600 dark:text-blue-400 hover:underline">7. Data Retention</a>
+                <a href="#children-privacy" class="text-blue-600 dark:text-blue-400 hover:underline">8. Children's Privacy</a>
+                <a href="#international-transfers" class="text-blue-600 dark:text-blue-400 hover:underline">9. International Transfers</a>
+                <a href="#policy-changes" class="text-blue-600 dark:text-blue-400 hover:underline">10. Policy Changes</a>
+                <a href="#contact-info" class="text-blue-600 dark:text-blue-400 hover:underline">11. Contact Information</a>
+            </div>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="space-y-8">
+            <!-- Section 1: Information Collection -->
+            <section id="information-collection" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">1</span>
+                    Information We Collect
+                </h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Information You Provide Directly</h3>
+                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-blue-500 mr-3 mt-1"></i>
+                                <span><strong>Questions and Content:</strong> Questions you submit, search queries, and any content you create on our platform</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-blue-500 mr-3 mt-1"></i>
+                                <span><strong>Contact Information:</strong> Name, email address, and any information you provide when contacting us</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-blue-500 mr-3 mt-1"></i>
+                                <span><strong>Account Preferences:</strong> Settings like dark mode preference and language choices</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Information Collected Automatically</h3>
+                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-blue-500 mr-3 mt-1"></i>
+                                <span><strong>Usage Data:</strong> How you interact with our platform, including pages visited and features used</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-blue-500 mr-3 mt-1"></i>
+                                <span><strong>Device Information:</strong> Browser type, operating system, IP address, and device identifiers</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-blue-500 mr-3 mt-1"></i>
+                                <span><strong>Performance Data:</strong> Error logs and performance metrics to improve our service</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Information Use -->
+            <section id="information-use" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">2</span>
+                    How We Use Your Information
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-green-800 dark:text-green-200 mb-3 flex items-center">
+                            <i class="fas fa-cogs text-green-600 mr-2"></i>
+                            Service Provision
+                        </h4>
+                        <ul class="space-y-1 text-green-700 dark:text-green-300 text-sm">
+                            <li>• Process and respond to your questions</li>
+                            <li>• Provide AI-powered search results</li>
+                            <li>• Maintain and improve platform functionality</li>
+                            <li>• Save your preferences and settings</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-3 flex items-center">
+                            <i class="fas fa-chart-line text-blue-600 mr-2"></i>
+                            Analytics & Improvement
+                        </h4>
+                        <ul class="space-y-1 text-blue-700 dark:text-blue-300 text-sm">
+                            <li>• Analyze usage patterns and trends</li>
+                            <li>• Improve AI search algorithms</li>
+                            <li>• Fix bugs and enhance performance</li>
+                            <li>• Develop new features</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-purple-800 dark:text-purple-200 mb-3 flex items-center">
+                            <i class="fas fa-envelope text-purple-600 mr-2"></i>
+                            Communication
+                        </h4>
+                        <ul class="space-y-1 text-purple-700 dark:text-purple-300 text-sm">
+                            <li>• Respond to support requests</li>
+                            <li>• Send service updates (if opted in)</li>
+                            <li>• Notify about policy changes</li>
+                            <li>• Provide technical assistance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-orange-50 dark:bg-orange-900/30 border border-orange-200 dark:border-orange-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-orange-800 dark:text-orange-200 mb-3 flex items-center">
+                            <i class="fas fa-shield-alt text-orange-600 mr-2"></i>
+                            Security & Compliance
+                        </h4>
+                        <ul class="space-y-1 text-orange-700 dark:text-orange-300 text-sm">
+                            <li>• Prevent fraud and abuse</li>
+                            <li>• Ensure platform security</li>
+                            <li>• Comply with legal obligations</li>
+                            <li>• Enforce our terms of service</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Information Sharing -->
+            <section id="information-sharing" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">3</span>
+                    Information Sharing
+                </h2>
+                
+                <div class="space-y-6">
+                    <div class="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-red-800 dark:text-red-200 mb-3 flex items-center">
+                            <i class="fas fa-exclamation-triangle text-red-600 mr-2"></i>
+                            We Do NOT Sell Your Data
+                        </h4>
+                        <p class="text-red-700 dark:text-red-300 text-sm">
+                            Askly does not sell, rent, or trade your personal information to third parties for marketing purposes.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Limited Sharing Scenarios</h3>
+                        <div class="space-y-4">
+                            <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Service Providers</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    We may share data with trusted service providers who help us operate our platform (hosting, analytics, AI processing) under strict confidentiality agreements.
+                                </p>
+                            </div>
+                            
+                            <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Legal Requirements</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    We may disclose information when required by law, court order, or to protect our rights, property, or safety of our users.
+                                </p>
+                            </div>
+                            
+                            <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Public Content</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    Questions and answers you submit may become part of our public knowledge base to help other users (without identifying information).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Data Security -->
+            <section id="data-security" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">4</span>
+                    Data Security
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Security Measures</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-lock text-green-500 mr-3 mt-1"></i>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>Encryption:</strong> Data encrypted in transit and at rest</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-server text-blue-500 mr-3 mt-1"></i>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>Secure Hosting:</strong> Industry-standard secure infrastructure</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-user-shield text-purple-500 mr-3 mt-1"></i>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>Access Control:</strong> Limited access on need-to-know basis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-eye text-orange-500 mr-3 mt-1"></i>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>Monitoring:</strong> Continuous security monitoring and updates</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-yellow-800 dark:text-yellow-200 mb-3 flex items-center">
+                            <i class="fas fa-exclamation-circle text-yellow-600 mr-2"></i>
+                            Important Note
+                        </h4>
+                        <p class="text-yellow-700 dark:text-yellow-300 text-sm mb-3">
+                            While we implement robust security measures, no method of transmission over the internet is 100% secure.
+                        </p>
+                        <p class="text-yellow-700 dark:text-yellow-300 text-sm">
+                            We recommend not sharing sensitive personal information (SSN, passwords, financial data) in your questions.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Cookies -->
+            <section id="cookies" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center text-white font-bold mr-4">5</span>
+                    Cookies and Tracking
+                </h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Types of Cookies We Use</h3>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                                <h4 class="font-medium text-gray-900 dark:text-white mb-2 flex items-center">
+                                    <i class="fas fa-cog text-blue-500 mr-2"></i>
+                                    Essential
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">Required for basic platform functionality and security.</p>
+                            </div>
+                            
+                            <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                                <h4 class="font-medium text-gray-900 dark:text-white mb-2 flex items-center">
+                                    <i class="fas fa-user-cog text-green-500 mr-2"></i>
+                                    Preferences
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">Remember your settings like dark mode and language.</p>
+                            </div>
+                            
+                            <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                                <h4 class="font-medium text-gray-900 dark:text-white mb-2 flex items-center">
+                                    <i class="fas fa-chart-bar text-purple-500 mr-2"></i>
+                                    Analytics
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">Help us understand how you use our platform to improve it.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">Managing Cookies</h4>
+                        <p class="text-blue-700 dark:text-blue-300 text-sm">
+                            You can control cookies through your browser settings. Note that disabling essential cookies may affect platform functionality.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6: User Rights -->
+            <section id="user-rights" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">6</span>
+                    Your Rights
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="flex items-start p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                            <i class="fas fa-eye text-blue-500 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Access</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">Request a copy of your personal data we hold.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                            <i class="fas fa-edit text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Correction</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">Request correction of inaccurate or incomplete data.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                            <i class="fas fa-trash text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Deletion</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">Request deletion of your personal data (subject to legal requirements).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                            <i class="fas fa-download text-purple-500 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Portability</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">Request your data in a portable format.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                            <i class="fas fa-ban text-orange-500 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Object</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">Object to certain processing of your personal data.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                            <i class="fas fa-pause text-indigo-500 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Restriction</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">Request restriction of processing in certain circumstances.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 rounded-lg p-4">
+                    <h4 class="font-semibold text-indigo-800 dark:text-indigo-200 mb-2">Exercising Your Rights</h4>
+                    <p class="text-indigo-700 dark:text-indigo-300 text-sm">
+                        To exercise any of these rights, please contact us at <a href="mailto:privacy@askly.com" class="underline">privacy@askly.com</a>. 
+                        We will respond within 30 days and may need to verify your identity.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Remaining sections with similar structure -->
+            <!-- Section 7: Data Retention -->
+            <section id="data-retention" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-gray-500 to-gray-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">7</span>
+                    Data Retention
+                </h2>
+                
+                <div class="space-y-4">
+                    <p class="text-gray-700 dark:text-gray-300">
+                        We retain your personal information only as long as necessary for the purposes outlined in this policy:
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                            <h4 class="font-medium text-gray-900 dark:text-white mb-2">Questions & Answers</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">Retained indefinitely as part of our knowledge base (anonymized after 2 years)</p>
+                        </div>
+                        
+                        <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                            <h4 class="font-medium text-gray-900 dark:text-white mb-2">Usage Data</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">Retained for up to 2 years for analytics and improvement purposes</p>
+                        </div>
+                        
+                        <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                            <h4 class="font-medium text-gray-900 dark:text-white mb-2">Contact Information</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">Retained for 3 years after last contact for support purposes</p>
+                        </div>
+                        
+                        <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                            <h4 class="font-medium text-gray-900 dark:text-white mb-2">Legal Requirements</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">Some data may be retained longer if required by law</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 8: Children's Privacy -->
+            <section id="children-privacy" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-pink-500 to-pink-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">8</span>
+                    Children's Privacy
+                </h2>
+                
+                <div class="bg-pink-50 dark:bg-pink-900/30 border border-pink-200 dark:border-pink-700 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-pink-800 dark:text-pink-200 mb-4">COPPA Compliance</h3>
+                    <div class="space-y-3 text-pink-700 dark:text-pink-300">
+                        <p>
+                            Askly is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.
+                        </p>
+                        <p>
+                            If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at <a href="mailto:privacy@askly.com" class="underline">privacy@askly.com</a>.
+                        </p>
+                        <p>
+                            We will take steps to remove such information from our systems within a reasonable time frame.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 9: International Transfers -->
+            <section id="international-transfers" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-teal-500 to-teal-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">9</span>
+                    International Transfers
+                </h2>
+                
+                <div class="space-y-4">
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Your information may be transferred to and processed in countries other than your country of residence. These countries may have data protection laws different from your jurisdiction.
+                    </p>
+                    
+                    <div class="bg-teal-50 dark:bg-teal-900/30 border border-teal-200 dark:border-teal-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-teal-800 dark:text-teal-200 mb-2">Safeguards</h4>
+                        <p class="text-teal-700 dark:text-teal-300 text-sm">
+                            When we transfer your data internationally, we ensure appropriate safeguards are in place, including:
+                        </p>
+                        <ul class="mt-2 text-teal-700 dark:text-teal-300 text-sm space-y-1">
+                            <li>• Standard contractual clauses approved by relevant authorities</li>
+                            <li>• Adequacy decisions by competent data protection authorities</li>
+                            <li>• Certification schemes and codes of conduct</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 10: Policy Changes -->
+            <section id="policy-changes" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">10</span>
+                    Policy Changes
+                </h2>
+                
+                <div class="space-y-4">
+                    <p class="text-gray-700 dark:text-gray-300">
+                        We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-cyan-50 dark:bg-cyan-900/30 border border-cyan-200 dark:border-cyan-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-cyan-800 dark:text-cyan-200 mb-2">How We Notify You</h4>
+                            <ul class="text-cyan-700 dark:text-cyan-300 text-sm space-y-1">
+                                <li>• Email notification for significant changes</li>
+                                <li>• Platform notification when you log in</li>
+                                <li>• Updated "Last Modified" date on this page</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">Your Options</h4>
+                            <ul class="text-blue-700 dark:text-blue-300 text-sm space-y-1">
+                                <li>• Review changes before they take effect</li>
+                                <li>• Contact us with questions or concerns</li>
+                                <li>• Stop using our service if you disagree</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 11: Contact Information -->
+            <section id="contact-info" class="bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 rounded-2xl shadow-xl p-8 text-white">
+                <h2 class="text-3xl font-bold mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-white bg-opacity-20 rounded-lg flex items-center justify-center font-bold mr-4">11</span>
+                    Contact Information
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Privacy Questions</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-yellow-300 mr-3"></i>
+                                <a href="mailto:privacy@askly.com" class="text-yellow-300 hover:text-yellow-200">privacy@askly.com</a>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-globe text-yellow-300 mr-3"></i>
+                                <a href="contact.html" class="text-yellow-300 hover:text-yellow-200">Contact Form</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Data Protection Officer</h3>
+                        <p class="text-purple-100 mb-2">
+                            For GDPR-related inquiries and data protection matters:
+                        </p>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-yellow-300 mr-3"></i>
+                            <a href="mailto:dpo@askly.com" class="text-yellow-300 hover:text-yellow-200">dpo@askly.com</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4">
+                    <p class="text-purple-100 text-sm">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        We are committed to resolving privacy concerns promptly. We typically respond to privacy inquiries within 5 business days.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-12 mt-16 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mr-3">
+                        <i class="fas fa-comments text-white text-xl"></i>
+                    </div>
+                    <span class="text-3xl font-bold gradient-text-white">Askly</span>
+                </div>
+                <p class="text-gray-400 mb-6">Your intelligent Q&A companion</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                    <a href="chat.html" class="text-gray-400 hover:text-white transition-colors">Chat</a>
+                    <a href="help.html" class="text-gray-400 hover:text-white transition-colors">Help</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                    <a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+                    <a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Terms</a>
+                </div>
+                <p class="text-gray-500">&copy; 2025 Askly. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode functionality
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const darkModeIcon = document.getElementById('darkModeIcon');
+            
+            if (!html.classList.contains('transition-colors')) {
+                html.classList.add('transition-colors', 'duration-500');
+            }
+            
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('darkMode', 'false');
+                darkModeIcon.className = 'fas fa-moon text-white transition-colors duration-300';
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('darkMode', 'true');
+                darkModeIcon.className = 'fas fa-sun text-yellow-300 transition-colors duration-300';
+            }
+        }
+
+        function initializeDarkMode() {
+            const darkMode = localStorage.getItem('darkMode');
+            const html = document.documentElement;
+            const darkModeIcon = document.getElementById('darkModeIcon');
+            
+            html.classList.add('transition-colors', 'duration-500');
+            
+            if (darkMode === 'true' || (!darkMode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+                if (darkModeIcon) darkModeIcon.className = 'fas fa-sun text-yellow-300 transition-colors duration-300';
+            } else {
+                html.classList.remove('dark');
+                if (darkModeIcon) darkModeIcon.className = 'fas fa-moon text-white transition-colors duration-300';
+            }
+        }
+
+        initializeDarkMode();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.remove('preload');
+            initializeDarkMode();
+            
+            const apiKey = localStorage.getItem('askly_api_key');
+            if (apiKey) {
+                document.getElementById('adminLinkHeader').classList.remove('hidden');
+            }
+
+            // Smooth scrolling for table of contents links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

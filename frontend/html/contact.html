@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-500">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Askly</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configure Tailwind for dark mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    transitionProperty: {
+                        'colors': 'color, background-color, border-color, text-decoration-color, fill, stroke',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen preload">
+    <!-- Header -->
+    <header class="gradient-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <button onclick="window.location.href='index.html'" class="text-white hover:text-gray-200 mr-4 transition-colors">
+                        <i class="fas fa-arrow-left text-xl"></i>
+                    </button>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-envelope text-white"></i>
+                        </div>
+                        <h1 class="text-2xl font-bold text-white">Contact Us</h1>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <!-- Dark Mode Toggle -->
+                    <button 
+                        id="darkModeToggle" 
+                        class="p-2 rounded-lg bg-white bg-opacity-20 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105"
+                        onclick="toggleDarkMode()"
+                    >
+                        <i id="darkModeIcon" class="fas fa-moon text-white transition-colors duration-300"></i>
+                    </button>
+                    <!-- Admin Link (conditional) -->
+                    <div id="adminLinkHeader" class="hidden">
+                        <button 
+                            onclick="window.location.href='admin.html'" 
+                            class="bg-white bg-opacity-20 text-white hover:bg-opacity-30 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                        >
+                            <i class="fas fa-shield-alt mr-1"></i>
+                            Admin
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl shadow-xl mb-6">
+                <i class="fas fa-envelope text-3xl text-white"></i>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 gradient-text">
+                Get in Touch
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Have a question, suggestion, or need help? We'd love to hear from you. Choose the best way to reach us below.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Contact Form -->
+            <div class="lg:col-span-2">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                        <i class="fas fa-paper-plane text-blue-500 mr-3"></i>
+                        Send us a Message
+                    </h2>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <!-- Name and Email Row -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    Full Name *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
+                                    placeholder="Enter your full name"
+                                >
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    Email Address *
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
+                                    placeholder="Enter your email address"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Subject -->
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Subject *
+                            </label>
+                            <select 
+                                id="subject" 
+                                name="subject" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                            >
+                                <option value="">Select a subject</option>
+                                <option value="general">General Question</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="bug">Bug Report</option>
+                                <option value="feature">Feature Request</option>
+                                <option value="account">Account Issues</option>
+                                <option value="feedback">Feedback & Suggestions</option>
+                                <option value="partnership">Partnership Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Priority -->
+                        <div>
+                            <label for="priority" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Priority Level
+                            </label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <label class="flex items-center p-3 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                                    <input type="radio" name="priority" value="low" class="text-green-500 focus:ring-green-500" checked>
+                                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                                        <i class="fas fa-flag text-green-500 mr-1"></i>
+                                        Low
+                                    </span>
+                                </label>
+                                <label class="flex items-center p-3 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                                    <input type="radio" name="priority" value="medium" class="text-yellow-500 focus:ring-yellow-500">
+                                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                                        <i class="fas fa-flag text-yellow-500 mr-1"></i>
+                                        Medium
+                                    </span>
+                                </label>
+                                <label class="flex items-center p-3 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                                    <input type="radio" name="priority" value="high" class="text-red-500 focus:ring-red-500">
+                                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                                        <i class="fas fa-flag text-red-500 mr-1"></i>
+                                        High
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Message *
+                            </label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="6" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 resize-none"
+                                placeholder="Please describe your question or issue in detail. Include any relevant information that might help us assist you better."
+                            ></textarea>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                Minimum 20 characters. Be as detailed as possible to help us provide the best assistance.
+                            </p>
+                        </div>
+
+                        <!-- File Attachment -->
+                        <div>
+                            <label for="attachment" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Attach Files (Optional)
+                            </label>
+                            <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-6 text-center hover:border-purple-400 dark:hover:border-purple-500 transition-colors">
+                                <input type="file" id="attachment" name="attachment" multiple accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg" class="hidden">
+                                <label for="attachment" class="cursor-pointer">
+                                    <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 dark:text-gray-500 mb-2"></i>
+                                    <p class="text-gray-600 dark:text-gray-300 font-medium">Click to upload files</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">PNG, JPG, PDF, DOC up to 10MB</p>
+                                </label>
+                            </div>
+                            <div id="fileList" class="mt-2 space-y-1"></div>
+                        </div>
+
+                        <!-- Newsletter Signup -->
+                        <div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                            <label class="flex items-start">
+                                <input type="checkbox" name="newsletter" class="mt-1 text-blue-500 focus:ring-blue-500">
+                                <span class="ml-3 text-sm text-blue-800 dark:text-blue-200">
+                                    <strong>Stay Updated:</strong> Subscribe to our newsletter for product updates, new features, and helpful tips about using Askly.
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button 
+                                type="submit" 
+                                class="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                id="submitBtn"
+                            >
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Send Message
+                            </button>
+                            <button 
+                                type="reset" 
+                                class="px-6 py-4 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                            >
+                                <i class="fas fa-undo mr-2"></i>
+                                Reset Form
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Success/Error Messages -->
+                    <div id="formMessage" class="mt-6 hidden">
+                        <!-- Message will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="space-y-6">
+                <!-- Contact Methods -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                        <i class="fas fa-address-book text-purple-500 mr-3"></i>
+                        Contact Information
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <!-- Email -->
+                        <div class="flex items-start p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Email Support</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm mb-2">For detailed inquiries and support</p>
+                                <a href="mailto:support@askly.com" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+                                    support@askly.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Response Time -->
+                        <div class="flex items-start p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                            <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-700 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Response Time</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                    We typically respond within 24-48 hours during business days (Monday-Friday, 9 AM - 6 PM EST).
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- GitHub -->
+                        <div class="flex items-start p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                            <div class="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fab fa-github text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">GitHub Issues</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm mb-2">Report bugs or request features</p>
+                                <a href="https://github.com/RealOrangeKun/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+                                    View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Link -->
+                <div class="bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 rounded-2xl shadow-xl p-6 text-white">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-question-circle text-yellow-300 mr-3"></i>
+                        Before You Contact Us
+                    </h3>
+                    <p class="text-purple-100 mb-4">
+                        Check our Help Center for instant answers to common questions and detailed guides.
+                    </p>
+                    <a href="help.html" class="inline-flex items-center bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg font-medium hover:bg-opacity-30 transition-colors">
+                        <i class="fas fa-book mr-2"></i>
+                        Visit Help Center
+                    </a>
+                </div>
+
+                <!-- Office Hours -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <i class="fas fa-business-time text-orange-500 mr-3"></i>
+                        Support Hours
+                    </h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-300">Monday - Friday:</span>
+                            <span class="font-medium text-gray-900 dark:text-white">9:00 AM - 6:00 PM EST</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-300">Saturday:</span>
+                            <span class="font-medium text-gray-900 dark:text-white">10:00 AM - 4:00 PM EST</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600 dark:text-gray-300">Sunday:</span>
+                            <span class="font-medium text-gray-900 dark:text-white">Closed</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-700 rounded-lg">
+                        <p class="text-yellow-800 dark:text-yellow-200 text-xs">
+                            <i class="fas fa-info-circle mr-1"></i>
+                            Messages sent outside business hours will be responded to on the next business day.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-12 mt-16 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mr-3">
+                        <i class="fas fa-comments text-white text-xl"></i>
+                    </div>
+                    <span class="text-3xl font-bold gradient-text-white">Askly</span>
+                </div>
+                <p class="text-gray-400 mb-6">Your intelligent Q&A companion</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                    <a href="chat.html" class="text-gray-400 hover:text-white transition-colors">Chat</a>
+                    <a href="help.html" class="text-gray-400 hover:text-white transition-colors">Help</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                </div>
+                <p class="text-gray-500">&copy; 2025 Askly. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode functionality
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const darkModeIcon = document.getElementById('darkModeIcon');
+            
+            if (!html.classList.contains('transition-colors')) {
+                html.classList.add('transition-colors', 'duration-500');
+            }
+            
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('darkMode', 'false');
+                darkModeIcon.className = 'fas fa-moon text-white transition-colors duration-300';
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('darkMode', 'true');
+                darkModeIcon.className = 'fas fa-sun text-yellow-300 transition-colors duration-300';
+            }
+        }
+
+        function initializeDarkMode() {
+            const darkMode = localStorage.getItem('darkMode');
+            const html = document.documentElement;
+            const darkModeIcon = document.getElementById('darkModeIcon');
+            
+            html.classList.add('transition-colors', 'duration-500');
+            
+            if (darkMode === 'true' || (!darkMode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+                if (darkModeIcon) darkModeIcon.className = 'fas fa-sun text-yellow-300 transition-colors duration-300';
+            } else {
+                html.classList.remove('dark');
+                if (darkModeIcon) darkModeIcon.className = 'fas fa-moon text-white transition-colors duration-300';
+            }
+        }
+
+        // Initialize dark mode immediately
+        initializeDarkMode();
+
+        // Form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.remove('preload');
+            initializeDarkMode();
+            
+            const apiKey = localStorage.getItem('askly_api_key');
+            if (apiKey) {
+                document.getElementById('adminLinkHeader').classList.remove('hidden');
+            }
+
+            // File upload handling
+            const fileInput = document.getElementById('attachment');
+            const fileList = document.getElementById('fileList');
+
+            fileInput.addEventListener('change', function(e) {
+                fileList.innerHTML = '';
+                const files = Array.from(e.target.files);
+                
+                files.forEach((file, index) => {
+                    const fileItem = document.createElement('div');
+                    fileItem.className = 'flex items-center justify-between p-2 bg-gray-100 dark:bg-gray-700 rounded text-sm';
+                    fileItem.innerHTML = `
+                        <span class="flex items-center text-gray-700 dark:text-gray-300">
+                            <i class="fas fa-file mr-2"></i>
+                            ${file.name} (${(file.size / 1024).toFixed(1)} KB)
+                        </span>
+                        <button type="button" onclick="removeFile(${index})" class="text-red-500 hover:text-red-700">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    fileList.appendChild(fileItem);
+                });
+            });
+
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Disable submit button
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+                
+                // Simulate form submission (replace with actual API call)
+                setTimeout(() => {
+                    // Show success message
+                    formMessage.className = 'mt-6 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg p-4';
+                    formMessage.innerHTML = `
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold text-green-800 dark:text-green-200">Message Sent Successfully!</h4>
+                                <p class="text-green-700 dark:text-green-300 text-sm">Thank you for contacting us. We'll get back to you within 24-48 hours.</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Reset form
+                    contactForm.reset();
+                    fileList.innerHTML = '';
+                    
+                    // Re-enable submit button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Send Message';
+                    
+                    // Scroll to message
+                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 2000);
+            });
+
+            // Character counter for message
+            const messageTextarea = document.getElementById('message');
+            const charCounter = document.createElement('div');
+            charCounter.className = 'text-xs text-gray-500 dark:text-gray-400 text-right mt-1';
+            messageTextarea.parentNode.appendChild(charCounter);
+
+            messageTextarea.addEventListener('input', function() {
+                const length = this.value.length;
+                charCounter.textContent = `${length} characters`;
+                
+                if (length < 20) {
+                    charCounter.className = 'text-xs text-red-500 text-right mt-1';
+                } else {
+                    charCounter.className = 'text-xs text-gray-500 dark:text-gray-400 text-right mt-1';
+                }
+            });
+        });
+
+        // Remove file function
+        function removeFile(index) {
+            const fileInput = document.getElementById('attachment');
+            const fileList = document.getElementById('fileList');
+            
+            // Create new FileList without the removed file
+            const dt = new DataTransfer();
+            const files = Array.from(fileInput.files);
+            
+            files.forEach((file, i) => {
+                if (i !== index) {
+                    dt.items.add(file);
+                }
+            });
+            
+            fileInput.files = dt.files;
+            
+            // Update display
+            fileList.children[index].remove();
+        }
+    </script>
+</body>
+</html>

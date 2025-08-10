@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-500">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Askly</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configure Tailwind for dark mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    transitionProperty: {
+                        'colors': 'color, background-color, border-color, text-decoration-color, fill, stroke',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen preload">
+    <!-- Header -->
+    <header class="gradient-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <button onclick="window.location.href='index.html'" class="text-white hover:text-gray-200 mr-4 transition-colors">
+                        <i class="fas fa-arrow-left text-xl"></i>
+                    </button>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-file-contract text-white"></i>
+                        </div>
+                        <h1 class="text-2xl font-bold text-white">Terms of Service</h1>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <!-- Dark Mode Toggle -->
+                    <button 
+                        id="darkModeToggle" 
+                        class="p-2 rounded-lg bg-white bg-opacity-20 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105"
+                        onclick="toggleDarkMode()"
+                    >
+                        <i id="darkModeIcon" class="fas fa-moon text-white transition-colors duration-300"></i>
+                    </button>
+                    <!-- Admin Link (conditional) -->
+                    <div id="adminLinkHeader" class="hidden">
+                        <button 
+                            onclick="window.location.href='admin.html'" 
+                            class="bg-white bg-opacity-20 text-white hover:bg-opacity-30 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                        >
+                            <i class="fas fa-shield-alt mr-1"></i>
+                            Admin
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl mb-6">
+                <i class="fas fa-file-contract text-3xl text-white"></i>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 gradient-text">
+                Terms of Service
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Please read these terms carefully before using Askly. By using our service, you agree to be bound by these terms.
+            </p>
+            <div class="mt-6 text-sm text-gray-500 dark:text-gray-400">
+                <p><strong>Last Updated:</strong> January 1, 2025</p>
+                <p><strong>Effective Date:</strong> January 1, 2025</p>
+            </div>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                <i class="fas fa-list text-indigo-500 mr-3"></i>
+                Table of Contents
+            </h2>
+            <div class="grid md:grid-cols-2 gap-2">
+                <a href="#acceptance" class="text-blue-600 dark:text-blue-400 hover:underline">1. Acceptance of Terms</a>
+                <a href="#description" class="text-blue-600 dark:text-blue-400 hover:underline">2. Description of Service</a>
+                <a href="#user-accounts" class="text-blue-600 dark:text-blue-400 hover:underline">3. User Accounts</a>
+                <a href="#acceptable-use" class="text-blue-600 dark:text-blue-400 hover:underline">4. Acceptable Use Policy</a>
+                <a href="#content-rights" class="text-blue-600 dark:text-blue-400 hover:underline">5. Content and Rights</a>
+                <a href="#privacy" class="text-blue-600 dark:text-blue-400 hover:underline">6. Privacy</a>
+                <a href="#disclaimers" class="text-blue-600 dark:text-blue-400 hover:underline">7. Disclaimers</a>
+                <a href="#limitation-liability" class="text-blue-600 dark:text-blue-400 hover:underline">8. Limitation of Liability</a>
+                <a href="#termination" class="text-blue-600 dark:text-blue-400 hover:underline">9. Termination</a>
+                <a href="#governing-law" class="text-blue-600 dark:text-blue-400 hover:underline">10. Governing Law</a>
+                <a href="#changes" class="text-blue-600 dark:text-blue-400 hover:underline">11. Changes to Terms</a>
+                <a href="#contact" class="text-blue-600 dark:text-blue-400 hover:underline">12. Contact Information</a>
+            </div>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="space-y-8">
+            <!-- Section 1: Acceptance of Terms -->
+            <section id="acceptance" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">1</span>
+                    Acceptance of Terms
+                </h2>
+                
+                <div class="space-y-4">
+                    <p class="text-gray-700 dark:text-gray-300">
+                        By accessing and using Askly ("the Service"), you accept and agree to be bound by the terms and provision of this agreement.
+                    </p>
+                    
+                    <div class="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-green-800 dark:text-green-200 mb-2">Agreement Formation</h4>
+                        <ul class="space-y-2 text-green-700 dark:text-green-300 text-sm">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span>These terms constitute a legally binding agreement between you and Askly</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span>If you do not agree to these terms, you must not use our service</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span>Continued use of the service constitutes acceptance of any updates to these terms</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                        <h4 class="font-medium text-gray-900 dark:text-white mb-2">Age Requirements</h4>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                            You must be at least 13 years old to use this service. Users between 13-18 must have parental consent.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Description of Service -->
+            <section id="description" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">2</span>
+                    Description of Service
+                </h2>
+                
+                <div class="space-y-6">
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Askly is an AI-powered question and answer platform that helps users find information and get answers to their questions.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-3 flex items-center">
+                                <i class="fas fa-robot text-blue-600 mr-2"></i>
+                                AI-Powered Responses
+                            </h4>
+                            <ul class="space-y-1 text-blue-700 dark:text-blue-300 text-sm">
+                                <li>• Intelligent answer generation</li>
+                                <li>• Contextual understanding</li>
+                                <li>• Continuous learning and improvement</li>
+                                <li>• Multi-topic expertise</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-purple-800 dark:text-purple-200 mb-3 flex items-center">
+                                <i class="fas fa-search text-purple-600 mr-2"></i>
+                                Search & Discovery
+                            </h4>
+                            <ul class="space-y-1 text-purple-700 dark:text-purple-300 text-sm">
+                                <li>• Fast search capabilities</li>
+                                <li>• Question recommendations</li>
+                                <li>• Knowledge base access</li>
+                                <li>• Related topic suggestions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-yellow-800 dark:text-yellow-200 mb-2 flex items-center">
+                            <i class="fas fa-exclamation-triangle text-yellow-600 mr-2"></i>
+                            Service Availability
+                        </h4>
+                        <p class="text-yellow-700 dark:text-yellow-300 text-sm">
+                            While we strive for 24/7 availability, the service may be temporarily unavailable due to maintenance, updates, or technical issues. We reserve the right to modify or discontinue features with notice.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: User Accounts -->
+            <section id="user-accounts" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">3</span>
+                    User Accounts
+                </h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Account Creation</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            Currently, Askly operates without requiring user registration. You can use our service anonymously.
+                        </p>
+                        
+                        <div class="bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-purple-800 dark:text-purple-200 mb-2">Anonymous Usage</h4>
+                            <ul class="space-y-1 text-purple-700 dark:text-purple-300 text-sm">
+                                <li>• No personal information required</li>
+                                <li>• Questions are not linked to individual users</li>
+                                <li>• Preferences stored locally in your browser</li>
+                                <li>• Optional contact information for support only</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Admin Access</h3>
+                        <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                            <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                                Administrative features are available to authorized users with valid API keys:
+                            </p>
+                            <ul class="space-y-1 text-gray-700 dark:text-gray-300 text-sm">
+                                <li>• Question management and moderation</li>
+                                <li>• User support and assistance</li>
+                                <li>• Platform analytics and monitoring</li>
+                                <li>• Content quality control</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Acceptable Use Policy -->
+            <section id="acceptable-use" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">4</span>
+                    Acceptable Use Policy
+                </h2>
+                
+                <div class="space-y-6">
+                    <div class="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-green-800 dark:text-green-200 mb-3 flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            Permitted Uses
+                        </h4>
+                        <ul class="space-y-2 text-green-700 dark:text-green-300 text-sm">
+                            <li>• Ask legitimate questions for educational, research, or informational purposes</li>
+                            <li>• Use the service for personal or professional learning</li>
+                            <li>• Share non-sensitive information and general knowledge queries</li>
+                            <li>• Provide feedback to help improve the service</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-red-800 dark:text-red-200 mb-3 flex items-center">
+                            <i class="fas fa-ban text-red-600 mr-2"></i>
+                            Prohibited Uses
+                        </h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h5 class="font-medium text-red-800 dark:text-red-200 mb-2">Content Restrictions</h5>
+                                <ul class="space-y-1 text-red-700 dark:text-red-300 text-sm">
+                                    <li>• Illegal, harmful, or offensive content</li>
+                                    <li>• Hate speech, harassment, or discrimination</li>
+                                    <li>• Spam, malicious, or deceptive content</li>
+                                    <li>• Personal information of others</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-medium text-red-800 dark:text-red-200 mb-2">Technical Abuse</h5>
+                                <ul class="space-y-1 text-red-700 dark:text-red-300 text-sm">
+                                    <li>• Automated scraping or data harvesting</li>
+                                    <li>• Attempting to bypass security measures</li>
+                                    <li>• Overloading servers or infrastructure</li>
+                                    <li>• Reverse engineering or hacking attempts</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-orange-50 dark:bg-orange-900/30 border border-orange-200 dark:border-orange-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-orange-800 dark:text-orange-200 mb-2 flex items-center">
+                            <i class="fas fa-gavel text-orange-600 mr-2"></i>
+                            Enforcement
+                        </h4>
+                        <p class="text-orange-700 dark:text-orange-300 text-sm">
+                            Violations may result in immediate termination of access, reporting to authorities if required by law, 
+                            and potential legal action. We reserve the right to investigate suspicious activity.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Content and Rights -->
+            <section id="content-rights" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">5</span>
+                    Content and Rights
+                </h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Your Content</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Ownership</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    You retain ownership of the questions and content you submit to Askly.
+                                </p>
+                            </div>
+                            
+                            <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                                <h4 class="font-medium text-gray-900 dark:text-white mb-2">License to Us</h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    You grant us a license to use, store, and display your content to provide the service.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Our Content</h3>
+                        <div class="bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-indigo-800 dark:text-indigo-200 mb-2">Intellectual Property</h4>
+                            <ul class="space-y-1 text-indigo-700 dark:text-indigo-300 text-sm">
+                                <li>• The Askly platform, software, and AI models are our proprietary property</li>
+                                <li>• AI-generated responses are created by our systems and algorithms</li>
+                                <li>• You may use responses for personal and educational purposes</li>
+                                <li>• Commercial use of our AI responses requires separate agreement</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Content Moderation</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-3">
+                            We reserve the right to review, moderate, or remove content that violates these terms or is otherwise inappropriate.
+                        </p>
+                        
+                        <div class="grid md:grid-cols-3 gap-3">
+                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                                <h5 class="font-medium text-gray-900 dark:text-white text-sm mb-1">Automated Review</h5>
+                                <p class="text-gray-700 dark:text-gray-300 text-xs">AI-powered content screening</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                                <h5 class="font-medium text-gray-900 dark:text-white text-sm mb-1">Human Review</h5>
+                                <p class="text-gray-700 dark:text-gray-300 text-xs">Manual review when flagged</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                                <h5 class="font-medium text-gray-900 dark:text-white text-sm mb-1">Community Reports</h5>
+                                <p class="text-gray-700 dark:text-gray-300 text-xs">User-reported violations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6: Privacy -->
+            <section id="privacy" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center text-white font-bold mr-4">6</span>
+                    Privacy
+                </h2>
+                
+                <div class="space-y-4">
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Your privacy is important to us. Our privacy practices are detailed in our Privacy Policy, which is incorporated into these terms by reference.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-800 dark:text-green-200 mb-2">Data Collection</h4>
+                            <p class="text-green-700 dark:text-green-300 text-sm">
+                                We collect minimal data necessary to provide the service and improve user experience.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">Data Protection</h4>
+                            <p class="text-blue-700 dark:text-blue-300 text-sm">
+                                We implement industry-standard security measures to protect your information.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-teal-50 dark:bg-teal-900/30 border border-teal-200 dark:border-teal-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-teal-800 dark:text-teal-200 mb-2">Full Privacy Policy</h4>
+                        <p class="text-teal-700 dark:text-teal-300 text-sm mb-2">
+                            For complete details about how we handle your data, please review our comprehensive Privacy Policy.
+                        </p>
+                        <a href="privacy.html" class="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 text-sm font-medium">
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                            Read Privacy Policy
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 7: Disclaimers -->
+            <section id="disclaimers" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center text-white font-bold mr-4">7</span>
+                    Disclaimers
+                </h2>
+                
+                <div class="space-y-6">
+                    <div class="bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-yellow-800 dark:text-yellow-200 mb-3 flex items-center">
+                            <i class="fas fa-exclamation-triangle text-yellow-600 mr-2"></i>
+                            Service "As Is"
+                        </h4>
+                        <p class="text-yellow-700 dark:text-yellow-300 text-sm mb-2">
+                            Askly is provided "as is" and "as available" without warranties of any kind, either express or implied.
+                        </p>
+                        <ul class="space-y-1 text-yellow-700 dark:text-yellow-300 text-sm">
+                            <li>• We do not guarantee uninterrupted or error-free service</li>
+                            <li>• AI responses may not always be accurate or complete</li>
+                            <li>• Service features may change or be discontinued</li>
+                        </ul>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                            <h4 class="font-medium text-gray-900 dark:text-white mb-2">AI Response Disclaimer</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                AI-generated responses are based on training data and algorithms. They may contain errors, 
+                                biases, or outdated information. Always verify important information independently.
+                            </p>
+                        </div>
+                        
+                        <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                            <h4 class="font-medium text-gray-900 dark:text-white mb-2">No Professional Advice</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                Responses should not be considered as professional medical, legal, financial, or other 
+                                specialized advice. Consult qualified professionals for important decisions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-red-800 dark:text-red-200 mb-2 flex items-center">
+                            <i class="fas fa-shield-alt text-red-600 mr-2"></i>
+                            User Responsibility
+                        </h4>
+                        <p class="text-red-700 dark:text-red-300 text-sm">
+                            You are responsible for evaluating the accuracy, completeness, and usefulness of all information 
+                            provided through the service. Use at your own risk.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 8: Limitation of Liability -->
+            <section id="limitation-liability" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center text-white font-bold mr-4">8</span>
+                    Limitation of Liability
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="bg-orange-50 dark:bg-orange-900/30 border border-orange-200 dark:border-orange-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-orange-800 dark:text-orange-200 mb-2">Liability Limits</h4>
+                        <p class="text-orange-700 dark:text-orange-300 text-sm mb-3">
+                            To the maximum extent permitted by law, Askly and its affiliates shall not be liable for any:
+                        </p>
+                        <ul class="space-y-1 text-orange-700 dark:text-orange-300 text-sm">
+                            <li>• Indirect, incidental, special, consequential, or punitive damages</li>
+                            <li>• Loss of profits, data, use, goodwill, or other intangible losses</li>
+                            <li>• Damages resulting from unauthorized access to or alteration of your data</li>
+                            <li>• Damages resulting from any third-party content or conduct</li>
+                        </ul>
+                    </div>
+
+                    <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                        <h4 class="font-medium text-gray-900 dark:text-white mb-2">Maximum Liability</h4>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                            In no event shall our total liability to you for all damages exceed the amount you paid us 
+                            in the twelve (12) months preceding the claim. Since our service is currently free, 
+                            this amount would be zero ($0).
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                        <h4 class="font-medium text-gray-900 dark:text-white mb-2">Jurisdiction Variations</h4>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                            Some jurisdictions do not allow the exclusion or limitation of liability for consequential 
+                            or incidental damages. In such jurisdictions, our liability will be limited to the fullest 
+                            extent permitted by law.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 9: Termination -->
+            <section id="termination" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-gray-500 to-gray-700 rounded-lg flex items-center justify-center text-white font-bold mr-4">9</span>
+                    Termination
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Termination by You</h3>
+                        <div class="space-y-3">
+                            <div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-3">
+                                <h5 class="font-medium text-blue-800 dark:text-blue-200 text-sm mb-1">Immediate Effect</h5>
+                                <p class="text-blue-700 dark:text-blue-300 text-xs">
+                                    You may stop using our service at any time without notice.
+                                </p>
+                            </div>
+                            <div class="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg p-3">
+                                <h5 class="font-medium text-green-800 dark:text-green-200 text-sm mb-1">Data Removal</h5>
+                                <p class="text-green-700 dark:text-green-300 text-xs">
+                                    Contact us to request removal of your submitted content.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Termination by Us</h3>
+                        <div class="space-y-3">
+                            <div class="bg-orange-50 dark:bg-orange-900/30 border border-orange-200 dark:border-orange-700 rounded-lg p-3">
+                                <h5 class="font-medium text-orange-800 dark:text-orange-200 text-sm mb-1">Violation of Terms</h5>
+                                <p class="text-orange-700 dark:text-orange-300 text-xs">
+                                    We may terminate access for violations of these terms.
+                                </p>
+                            </div>
+                            <div class="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 rounded-lg p-3">
+                                <h5 class="font-medium text-red-800 dark:text-red-200 text-sm mb-1">Service Discontinuation</h5>
+                                <p class="text-red-700 dark:text-red-300 text-xs">
+                                    We may discontinue the service with reasonable notice.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                    <h4 class="font-medium text-gray-900 dark:text-white mb-2">Effect of Termination</h4>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm">
+                        Upon termination, your right to use the service ceases immediately. Provisions regarding 
+                        disclaimers, limitation of liability, and governing law survive termination.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 10: Governing Law -->
+            <section id="governing-law" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-lg flex items-center justify-center text-white font-bold mr-4">10</span>
+                    Governing Law
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-teal-50 dark:bg-teal-900/30 border border-teal-200 dark:border-teal-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-teal-800 dark:text-teal-200 mb-2">Applicable Law</h4>
+                            <p class="text-teal-700 dark:text-teal-300 text-sm">
+                                These terms are governed by and construed in accordance with the laws of [Your Jurisdiction], 
+                                without regard to conflict of law principles.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-cyan-50 dark:bg-cyan-900/30 border border-cyan-200 dark:border-cyan-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-cyan-800 dark:text-cyan-200 mb-2">Dispute Resolution</h4>
+                            <p class="text-cyan-700 dark:text-cyan-300 text-sm">
+                                Any disputes arising from these terms shall be resolved in the courts of [Your Jurisdiction] 
+                                and you consent to personal jurisdiction in such courts.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                        <h4 class="font-medium text-gray-900 dark:text-white mb-2">Alternative Dispute Resolution</h4>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                            Before pursuing formal legal action, we encourage users to contact us directly to resolve disputes:
+                        </p>
+                        <ul class="space-y-1 text-gray-700 dark:text-gray-300 text-sm">
+                            <li>• Initial contact within 30 days of the dispute arising</li>
+                            <li>• Good faith effort to resolve through direct communication</li>
+                            <li>• Mediation may be available for certain types of disputes</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">Severability</h4>
+                        <p class="text-blue-700 dark:text-blue-300 text-sm">
+                            If any provision of these terms is found to be unenforceable, the remaining provisions 
+                            will remain in full force and effect. The unenforceable provision will be replaced 
+                            with an enforceable provision that most closely reflects the original intent.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 11: Changes to Terms -->
+            <section id="changes" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-gradient-to-br from-violet-500 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold mr-4">11</span>
+                    Changes to Terms
+                </h2>
+                
+                <div class="space-y-4">
+                    <p class="text-gray-700 dark:text-gray-300">
+                        We may update these Terms of Service from time to time. When we make changes, 
+                        we will notify users and update the "Last Updated" date.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-violet-50 dark:bg-violet-900/30 border border-violet-200 dark:border-violet-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-violet-800 dark:text-violet-200 mb-2">Notification Methods</h4>
+                            <ul class="space-y-1 text-violet-700 dark:text-violet-300 text-sm">
+                                <li>• Platform notification when you visit</li>
+                                <li>• Email notification for significant changes</li>
+                                <li>• Updated date on this page</li>
+                                <li>• Posted notice on our main page</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-purple-800 dark:text-purple-200 mb-2">Effective Date</h4>
+                            <ul class="space-y-1 text-purple-700 dark:text-purple-300 text-sm">
+                                <li>• Changes take effect 30 days after posting</li>
+                                <li>• Continued use constitutes acceptance</li>
+                                <li>• You may stop using if you disagree</li>
+                                <li>• Material changes may have longer notice periods</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-indigo-800 dark:text-indigo-200 mb-2">Version History</h4>
+                        <p class="text-indigo-700 dark:text-indigo-300 text-sm">
+                            We maintain a record of significant changes to these terms. You can request 
+                            information about previous versions by contacting us.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 12: Contact Information -->
+            <section id="contact" class="bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-700 rounded-2xl shadow-xl p-8 text-white">
+                <h2 class="text-3xl font-bold mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-white bg-opacity-20 rounded-lg flex items-center justify-center font-bold mr-4">12</span>
+                    Contact Information
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Legal Questions</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-yellow-300 mr-3"></i>
+                                <a href="mailto:legal@askly.com" class="text-yellow-300 hover:text-yellow-200">legal@askly.com</a>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-globe text-yellow-300 mr-3"></i>
+                                <a href="contact.html" class="text-yellow-300 hover:text-yellow-200">Contact Form</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">General Support</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-yellow-300 mr-3"></i>
+                                <a href="mailto:support@askly.com" class="text-yellow-300 hover:text-yellow-200">support@askly.com</a>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-question-circle text-yellow-300 mr-3"></i>
+                                <a href="help.html" class="text-yellow-300 hover:text-yellow-200">Help Center</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4">
+                    <p class="text-purple-100 text-sm">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        For questions about these Terms of Service, please contact us. We typically respond 
+                        to legal inquiries within 7 business days.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-12 mt-16 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mr-3">
+                        <i class="fas fa-comments text-white text-xl"></i>
+                    </div>
+                    <span class="text-3xl font-bold gradient-text-white">Askly</span>
+                </div>
+                <p class="text-gray-400 mb-6">Your intelligent Q&A companion</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                    <a href="chat.html" class="text-gray-400 hover:text-white transition-colors">Chat</a>
+                    <a href="help.html" class="text-gray-400 hover:text-white transition-colors">Help</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                    <a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+                    <a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Terms</a>
+                </div>
+                <p class="text-gray-500">&copy; 2025 Askly. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode functionality
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const darkModeIcon = document.getElementById('darkModeIcon');
+            
+            if (!html.classList.contains('transition-colors')) {
+                html.classList.add('transition-colors', 'duration-500');
+            }
+            
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('darkMode', 'false');
+                darkModeIcon.className = 'fas fa-moon text-white transition-colors duration-300';
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('darkMode', 'true');
+                darkModeIcon.className = 'fas fa-sun text-yellow-300 transition-colors duration-300';
+            }
+        }
+
+        function initializeDarkMode() {
+            const darkMode = localStorage.getItem('darkMode');
+            const html = document.documentElement;
+            const darkModeIcon = document.getElementById('darkModeIcon');
+            
+            html.classList.add('transition-colors', 'duration-500');
+            
+            if (darkMode === 'true' || (!darkMode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+                if (darkModeIcon) darkModeIcon.className = 'fas fa-sun text-yellow-300 transition-colors duration-300';
+            } else {
+                html.classList.remove('dark');
+                if (darkModeIcon) darkModeIcon.className = 'fas fa-moon text-white transition-colors duration-300';
+            }
+        }
+
+        initializeDarkMode();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.remove('preload');
+            initializeDarkMode();
+            
+            const apiKey = localStorage.getItem('askly_api_key');
+            if (apiKey) {
+                document.getElementById('adminLinkHeader').classList.remove('hidden');
+            }
+
+            // Smooth scrolling for table of contents links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -36,12 +36,12 @@ function addPlaceholderMessage() {
                 <div class="w-6 h-6 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center mr-2">
                     <i class="fas fa-robot text-white text-xs"></i>
                 </div>
-                <span class="text-sm font-medium text-gray-600">Askly Assistant</span>
-                <span class="text-xs text-gray-400 ml-auto">${formatTimestamp()}</span>
+                <span class="text-sm font-medium text-gray-600 dark:text-gray-300">Askly Assistant</span>
+                <span class="text-xs text-gray-400 dark:text-gray-500 ml-auto">${formatTimestamp()}</span>
             </div>
             <div class="flex items-center">
                 <i class="fas fa-spinner loading text-purple-600 mr-2"></i>
-                <span class="text-gray-600">${currentMode === 'search' ? 'Searching for similar questions...' : 'Processing your question...'}</span>
+                <span class="text-gray-600 dark:text-gray-300">${currentMode === 'search' ? 'Searching for similar questions...' : 'Processing your question...'}</span>
             </div>
         </div>
     `;
@@ -63,7 +63,7 @@ function replacePlaceholderMessage(placeholderElement, content, type = 'text') {
     } else if (type === 'error') {
         messageContent = createErrorMessage(content);
     } else {
-        messageContent = `<p class="text-gray-800">${escapeHtml(content)}</p>`;
+        messageContent = `<p class="text-gray-800 dark:text-gray-200">${escapeHtml(content)}</p>`;
     }
     
     placeholderElement.innerHTML = `
@@ -72,8 +72,8 @@ function replacePlaceholderMessage(placeholderElement, content, type = 'text') {
                 <div class="w-6 h-6 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center mr-2">
                     <i class="fas fa-robot text-white text-xs"></i>
                 </div>
-                <span class="text-sm font-medium text-gray-600">Askly Assistant</span>
-                <span class="text-xs text-gray-400 ml-auto">${formatTimestamp()}</span>
+                <span class="text-sm font-medium text-gray-600 dark:text-gray-300">Askly Assistant</span>
+                <span class="text-xs text-gray-400 dark:text-gray-500 ml-auto">${formatTimestamp()}</span>
             </div>
             ${messageContent}
         </div>
@@ -166,7 +166,7 @@ function addBotMessage(content, type = 'text') {
     } else if (type === 'error') {
         messageContent = createErrorMessage(content);
     } else {
-        messageContent = `<p class="text-gray-800">${escapeHtml(content)}</p>`;
+        messageContent = `<p class="text-gray-800 dark:text-gray-200">${escapeHtml(content)}</p>`;
     }
     
     messageDiv.innerHTML = `
@@ -175,8 +175,8 @@ function addBotMessage(content, type = 'text') {
                 <div class="w-6 h-6 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center mr-2">
                     <i class="fas fa-robot text-white text-xs"></i>
                 </div>
-                <span class="text-sm font-medium text-gray-600">Askly Assistant</span>
-                <span class="text-xs text-gray-400 ml-auto">${formatTimestamp()}</span>
+                <span class="text-sm font-medium text-gray-600 dark:text-gray-300">Askly Assistant</span>
+                <span class="text-xs text-gray-400 dark:text-gray-500 ml-auto">${formatTimestamp()}</span>
             </div>
             ${messageContent}
         </div>
@@ -190,15 +190,15 @@ function createResultsMessage(questions) {
     if (!questions || questions.length === 0) {
         return `
             <div class="text-center py-4">
-                <i class="fas fa-search text-3xl text-gray-300 mb-2"></i>
-                <p class="text-gray-600 font-medium mb-2">No similar questions found</p>
-                <p class="text-gray-500 text-sm mb-3">It looks like this is a unique question!</p>
-                <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                <i class="fas fa-search text-3xl text-gray-300 dark:text-gray-600 mb-2"></i>
+                <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">No similar questions found</p>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">It looks like this is a unique question!</p>
+                <div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-3">
                     <div class="flex items-start">
-                        <i class="fas fa-lightbulb text-blue-500 mr-2 mt-0.5"></i>
+                        <i class="fas fa-lightbulb text-blue-500 dark:text-blue-400 mr-2 mt-0.5"></i>
                         <div>
-                            <p class="text-blue-800 font-medium text-sm">Want to help others?</p>
-                            <p class="text-blue-700 text-sm">Switch to <strong>Create Mode</strong> below to submit your question to our knowledge base!</p>
+                            <p class="text-blue-800 dark:text-blue-200 font-medium text-sm">Want to help others?</p>
+                            <p class="text-blue-700 dark:text-blue-300 text-sm">Switch to <strong>Create Mode</strong> below to submit your question to our knowledge base!</p>
                         </div>
                     </div>
                 </div>
@@ -206,25 +206,25 @@ function createResultsMessage(questions) {
         `;
     }
     
-    let html = `<p class="text-gray-800 mb-3">I found ${questions.length} similar question${questions.length > 1 ? 's' : ''} for you:</p>`;
+    let html = `<p class="text-gray-800 dark:text-gray-200 mb-3">I found ${questions.length} similar question${questions.length > 1 ? 's' : ''} for you:</p>`;
     
     questions.forEach((question, index) => {
         html += `
-            <div class="bg-gray-50 rounded-lg p-4 mb-3 border border-gray-200">
+            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 mb-3 border border-gray-200 dark:border-gray-600">
                 <div class="mb-3">
-                    <h4 class="font-semibold text-gray-900 mb-1 flex items-center">
-                        <i class="fas fa-question-circle text-blue-500 mr-2 text-sm"></i>
+                    <h4 class="font-semibold text-gray-900 dark:text-gray-100 mb-1 flex items-center">
+                        <i class="fas fa-question-circle text-blue-500 dark:text-blue-400 mr-2 text-sm"></i>
                         Question ${index + 1}
                     </h4>
-                    <p class="text-gray-700">${escapeHtml(question.questionText)}</p>
+                    <p class="text-gray-700 dark:text-gray-300">${escapeHtml(question.questionText)}</p>
                 </div>
                 
                 <div>
-                    <h4 class="font-semibold text-gray-900 mb-1 flex items-center">
-                        <i class="fas fa-lightbulb text-yellow-500 mr-2 text-sm"></i>
+                    <h4 class="font-semibold text-gray-900 dark:text-gray-100 mb-1 flex items-center">
+                        <i class="fas fa-lightbulb text-yellow-500 dark:text-yellow-400 mr-2 text-sm"></i>
                         Answer
                     </h4>
-                    <p class="text-gray-700">${escapeHtml(question.answerText)}</p>
+                    <p class="text-gray-700 dark:text-gray-300">${escapeHtml(question.answerText)}</p>
                 </div>
             </div>
         `;
@@ -232,12 +232,12 @@ function createResultsMessage(questions) {
     
     // Add helpful guidance after showing results
     html += `
-        <div class="bg-green-50 border border-green-200 rounded-lg p-3 mt-4">
+        <div class="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg p-3 mt-4">
             <div class="flex items-start">
-                <i class="fas fa-question-circle text-green-500 mr-2 mt-0.5"></i>
+                <i class="fas fa-question-circle text-green-500 dark:text-green-400 mr-2 mt-0.5"></i>
                 <div>
-                    <p class="text-green-800 font-medium text-sm">Didn't find what you were looking for?</p>
-                    <p class="text-green-700 text-sm">Switch to <strong>Create Mode</strong> below to submit your specific question!</p>
+                    <p class="text-green-800 dark:text-green-200 font-medium text-sm">Didn't find what you were looking for?</p>
+                    <p class="text-green-700 dark:text-green-300 text-sm">Switch to <strong>Create Mode</strong> below to submit your specific question!</p>
                 </div>
             </div>
         </div>
@@ -248,10 +248,10 @@ function createResultsMessage(questions) {
 
 function createSuccessMessage(message) {
     return `
-        <div class="bg-green-50 border border-green-200 rounded-lg p-3">
+        <div class="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg p-3">
             <div class="flex items-center">
-                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                <p class="text-green-800 font-medium">${escapeHtml(message)}</p>
+                <i class="fas fa-check-circle text-green-500 dark:text-green-400 mr-2"></i>
+                <p class="text-green-800 dark:text-green-200 font-medium">${escapeHtml(message)}</p>
             </div>
         </div>
     `;
@@ -259,10 +259,10 @@ function createSuccessMessage(message) {
 
 function createErrorMessage(message) {
     return `
-        <div class="bg-red-50 border border-red-200 rounded-lg p-3">
+        <div class="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 rounded-lg p-3">
             <div class="flex items-center">
-                <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>
-                <p class="text-red-800 font-medium">${escapeHtml(message)}</p>
+                <i class="fas fa-exclamation-circle text-red-500 dark:text-red-400 mr-2"></i>
+                <p class="text-red-800 dark:text-red-200 font-medium">${escapeHtml(message)}</p>
             </div>
         </div>
     `;
