@@ -12,6 +12,8 @@ const createModeBtn = document.getElementById('createModeBtn');
 // State
 let currentMode = 'search'; // 'search' or 'create'
 let isLoading = false;
+let commandHistory = []; // Store command history
+let historyIndex = -1; // Current position in history (-1 means not navigating history)
 
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
@@ -86,6 +88,53 @@ function scrollToBottom() {
 
 function formatTimestamp() {
     return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
+// History Navigation Functions
+function addToHistory(command) {
+    // Don't add empty commands or duplicates of the last command
+    if (command.trim() && (commandHistory.length === 0 || commandHistory[commandHistory.length - 1] !== command)) {
+        commandHistory.push(command);
+        // Limit history to last 50 commands
+        if (commandHistory.length > 50) {
+            commandHistory.shift();
+        }
+    }
+    // Reset history navigation
+    historyIndex = -1;
+}
+
+function navigateHistory(direction) {
+    if (commandHistory.length === 0) return;
+    
+    if (direction === 'up') {
+        if (historyIndex === -1) {
+            // First time pressing up, go to most recent command
+            historyIndex = commandHistory.length - 1;
+        } else if (historyIndex > 0) {
+            // Go to previous command
+            historyIndex--;
+        }
+    } else if (direction === 'down') {
+        if (historyIndex !== -1) {
+            historyIndex++;
+            if (historyIndex >= commandHistory.length) {
+                // Past the end, clear input
+                historyIndex = -1;
+                messageInput.value = '';
+                autoResize();
+                return;
+            }
+        }
+    }
+    
+    // Set the input value to the history command
+    if (historyIndex !== -1 && historyIndex < commandHistory.length) {
+        messageInput.value = commandHistory[historyIndex];
+        autoResize();
+        // Move cursor to end
+        messageInput.setSelectionRange(messageInput.value.length, messageInput.value.length);
+    }
 }
 
 // Message Functions
@@ -455,6 +504,9 @@ sendBtn.addEventListener('click', async () => {
     const message = messageInput.value.trim();
     if (!message) return;
     
+    // Add to command history
+    addToHistory(message);
+    
     addUserMessage(message);
     messageInput.value = '';
     autoResize();
@@ -468,6 +520,20 @@ messageInput.addEventListener('keypress', async (e) => {
         if (!isLoading) {
             sendBtn.click();
         }
+    }
+});
+
+// Add arrow key navigation for command history
+messageInput.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        navigateHistory('up');
+    } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        navigateHistory('down');
+    } else if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') {
+        // Reset history navigation when user starts typing
+        historyIndex = -1;
     }
 });
 
