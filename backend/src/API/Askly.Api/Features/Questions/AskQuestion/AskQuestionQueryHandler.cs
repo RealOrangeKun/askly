@@ -21,7 +21,7 @@ public sealed class AskQuestionQueryHandler(
     ICacheService cacheService)
     : IQueryHandler<AskQuestionQuery, IEnumerable<QuestionResponse>>, IUsesCaching<AskQuestionQuery>
 {
-    private const double MAX_DISTANCE = 0.7;
+    private const double MininimumScore = 0.6;
 
     public string CreateCacheKey(AskQuestionQuery query)
     {
@@ -66,16 +66,17 @@ public sealed class AskQuestionQueryHandler(
         const string sql = $"""
                 SELECT 
                     question_text AS {nameof(QuestionResponse.QuestionText)}, 
-                    answer_text AS {nameof(QuestionResponse.AnswerText)}
+                    answer_text AS {nameof(QuestionResponse.AnswerText)},
+                    (1 - (question_embedding <=> @embedding::vector)) AS {nameof(QuestionResponse.Score)}
                 FROM questions 
                 WHERE status = 'Answered'
-                  AND question_embedding <=> @embedding::vector < @maxDistance
+                  AND question_embedding <=> @embedding::vector <= @maxDistance
                 ORDER BY question_embedding <=> @embedding::vector
                 LIMIT 5
                 """;
 
         return await connection.QueryAsync<QuestionResponse>(sql,
-            new { embedding = questionEmbedding, maxDistance = MAX_DISTANCE });
+            new { embedding = questionEmbedding, maxDistance = 1.0 - MininimumScore });
     }
 
 }
