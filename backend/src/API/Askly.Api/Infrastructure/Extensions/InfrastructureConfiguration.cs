@@ -32,8 +32,6 @@ public static class InfrastructureConfiguration
 
         services.AddCachingInternal(configuration);
 
-
-
         services.TryAddScoped<IDbConnectionFactory, DbConnectionFactory>();
 
         services.TryAddScoped<IQuestionRepository, QuestionRepository>();
