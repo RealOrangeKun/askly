@@ -2,6 +2,31 @@
 
 A modern, responsive chat-based frontend for the Askly Q&A platform built with vanilla HTML, CSS, JavaScript, and Tailwind CSS.
 
+> 🚀 **Live Repository**: [https://github.com/RealOrangeKun/askly](https://github.com/RealOrangeKun/askly)
+
+## 📁 Project Structure
+
+```
+frontend/
+├── index.html              # Root redirect page
+├── README.md              # This file
+├── .gitignore            # Git ignore rules
+├── html/                 # All HTML pages
+│   ├── index.html        # Main homepage
+│   ├── chat.html         # Chat interface
+│   ├── admin.html        # Admin panel
+│   ├── help.html         # Help Center
+│   ├── contact.html      # Contact page
+│   ├── privacy.html      # Privacy Policy
+│   └── terms.html        # Terms of Service
+├── css/                  # Stylesheets
+│   └── styles.css        # Main styles
+└── js/                   # JavaScript files
+    ├── chat.js           # Chat functionality
+    ├── admin.js          # Admin panel logic
+    └── tailwind.config.js # Tailwind configuration
+```
+
 ## Features
 
 ### 🏠 **Landing Page**
@@ -149,7 +174,6 @@ If you encounter CORS errors, ensure your backend API includes the appropriate C
 ## Future Enhancements
 
 Potential improvements you could add:
-- Dark mode toggle
 - Message search and history
 - File upload capabilities
 - Voice input support
@@ -157,5 +181,51 @@ Potential improvements you could add:
 - Message reactions and voting
 - User avatars and profiles
 - Conversation persistence
+
+## 🚀 Deployment
+
+### GitHub Pages
+This project is ready for GitHub Pages deployment:
+
+1. **Enable GitHub Pages** in your repository settings
+2. **Select Source**: Deploy from `main` branch
+3. **Access**: Your site will be available at `https://yourusername.github.io/askly/`
+
+### Local Development
+```bash
+# Clone the repository
+git clone https://github.com/RealOrangeKun/askly.git
+cd askly/frontend
+
+# Open in browser
+# Simply open index.html in your web browser
+# Or use a local server:
+python -m http.server 8000
+# Navigate to http://localhost:8000
+```
+
+### Custom Domain
+To use a custom domain:
+1. Add a `CNAME` file to the root with your domain
+2. Configure DNS to point to GitHub Pages
+3. Enable HTTPS in repository settings
+
+## 🔗 API Integration
+
+Make sure your backend API is running and accessible. Update the API endpoints in:
+- `js/chat.js` - For chat functionality
+- `js/admin.js` - For admin operations
+
+## 📞 Support
+
+- **Repository**: [https://github.com/RealOrangeKun/askly](https://github.com/RealOrangeKun/askly)
+- **Issues**: Report bugs and feature requests on GitHub
+- **Documentation**: See the Help Center in the application
+
+## 📄 License
+
+This project is open source. See the LICENSE file for details.
+
+---
 
 Enjoy your modern chat-based Askly experience! 🚀
