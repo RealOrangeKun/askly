@@ -455,3 +455,5 @@ postgres_data/
 models
 
 Admin
+
+appsettings.*.json
